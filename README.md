@@ -96,6 +96,9 @@ cd RoboFlamingo
 conda create -n RoboFlamingo python=3.8
 source activate RoboFlamingo
 pip install -r requirements.txt
+
+# Install PyTorch3D
+conda install pytorch3d -c pytorch3d-nightly
 ```
 
 ## Training the model (using DDP):

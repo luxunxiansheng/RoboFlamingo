@@ -1,22 +1,22 @@
 #!/bin/bash
 
-export EVALUTION_ROOT=$(pwd)
+# export EVALUTION_ROOT=$(pwd)
 
-# Install dependency for calvin
-sudo apt-get -y install libegl1-mesa libegl1
-sudo apt-get -y install libgl1
+# # Install dependency for calvin
+# sudo apt-get -y install libegl1-mesa libegl1
+# sudo apt-get -y install libgl1
 
-sudo apt-get update -y -qq
-sudo apt-get install -y -qq libegl1-mesa libegl1-mesa-dev
+# sudo apt-get update -y -qq
+# sudo apt-get install -y -qq libegl1-mesa libegl1-mesa-dev
 
-sudo apt install -y mesa-utils libosmesa6-dev llvm
-sudo apt-get -y install meson
-sudo apt-get -y build-dep mesa
+# sudo apt install -y mesa-utils libosmesa6-dev llvm
+# sudo apt-get -y install meson
+# sudo apt-get -y build-dep mesa
 
 # !!! Set for your own path
-calvin_dataset_path='calvin_data/task_ABCD_D'
+calvin_dataset_path='/home/li/OrNot/TC/calvin/dataset/calvin_debug_dataset'
 # calvin_conf_path
-calvin_conf_path="calvin/calvin_models/conf"
+calvin_conf_path="/home/li/OrNot/TC/calvin/calvin_models/conf"
 # language model path
 lm_path=''
 # tokenizer path

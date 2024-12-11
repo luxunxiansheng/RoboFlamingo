@@ -4,7 +4,7 @@ import argparse
 import glob
 import os
 import random
-from robot_flamingo.eval.eval_utils import eval_one_epoch_calvin_ddp
+from eval_utils import eval_one_epoch_calvin_ddp
 from torch.distributed.elastic.multiprocessing.errors import record
 
 # os.environ['PYOPENGL_PLATFORM'] = 'egl'
@@ -15,10 +15,10 @@ import wandb
 from open_flamingo.train.distributed import init_distributed_device, world_info_from_env
 from torch.nn.parallel import DistributedDataParallel as DDP
 
-from robot_flamingo.data.data import get_data
+from data.data import get_data
 from open_flamingo.train.distributed import init_distributed_device, world_info_from_env
 from eval_utils import eval_one_epoch_calvin, eval_one_epoch_calvin_ddp
-from robot_flamingo.models.factory import create_model_and_transforms, mpt_dict
+from models.factory import create_model_and_transforms, mpt_dict
 
 
 def random_seed(seed=42, rank=0):

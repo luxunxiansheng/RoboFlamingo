@@ -8,7 +8,8 @@ import time
 import PIL.Image as Image
 import copy
 from collections import deque
-from moviepy.editor import ImageSequenceClip
+#from moviepy.editor import ImageSequenceClip
+from moviepy.video.io.ImageSequenceClip import ImageSequenceClip
 # This is for using the locally installed repo clone when using slurm
 from calvin_agent.models.calvin_base_model import CalvinBaseModel
 sys.path.insert(0, Path(__file__).absolute().parents[2].as_posix())
