@@ -1,5 +1,11 @@
 """ Main training script """
 
+
+## add data path the python path
+import sys
+sys.path.append('/home/li/OrNot/TC/RoboFlamingo/robot_flamingo')
+
+
 import argparse
 import glob
 import os
@@ -358,6 +364,7 @@ def main():
     args.local_rank, args.rank, args.world_size = world_info_from_env()
 
     device_id = init_distributed_device(args)
+    
     print("device_id: ", device_id)
     print("world_size: ", torch.distributed.get_world_size())
     random_seed(args.seed)
@@ -401,7 +408,11 @@ def main():
         # refresh=args.refresh
     )
     checkpoint_path = args.openflamingo_checkpoint
+    
     print("Loading origin flamingo checkpoint from ", checkpoint_path)
+    
+    
+    
     model.load_state_dict(torch.load(checkpoint_path), strict=False)
 
     if args.sep_lm_head:
